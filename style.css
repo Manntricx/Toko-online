@@ -9,6 +9,16 @@ header {
     color: white;
     text-align: center;
     padding: 1rem;
+    position: relative;
+}
+#search {
+    width: 50%;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    display: block;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
 }
 nav {
     background-color: #444;

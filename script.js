@@ -65,3 +65,19 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+
+// Fitur pencarian produk
+document.getElementById('search').addEventListener('input', filterProducts);
+
+function filterProducts() {
+    const query = document.getElementById('search').value.toLowerCase();
+    const products = document.querySelectorAll('.product');
+    products.forEach(product => {
+        const name = product.querySelector('h3').textContent.toLowerCase();
+        if (name.includes(query)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
