@@ -4,32 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toko Online</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div id="promo-banner">
-        <span class="banner-text">✦ Flash Sale Hari Ini &nbsp;|&nbsp; Diskon s/d 30% &nbsp;|&nbsp; Gratis Ongkir min. Rp 150.000 ✦</span>
-        <button class="banner-close" onclick="this.parentElement.style.display='none'">✕</button>
-    </div>
-
     <header>
-        <div class="header-brand">
-            <div class="brand-dot"></div>
-            <h1>Toko<em>Online</em></h1>
-        </div>
-        <div class="header-search">
-            <span class="search-icon">⌕</span>
-            <input type="text" id="search" placeholder="Cari produk...">
-        </div>
+        <h1>Toko Online Sederhana</h1>
+        <input type="text" id="search" placeholder="Cari produk...">
         <div id="cart" onclick="showCart()">
             <span id="cart-icon">🛒</span>
             <span id="cart-count">0</span>
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -38,285 +23,150 @@
             <li><a href="#contact">Kontak</a></li>
         </ul>
     </nav>
-
     <div class="container">
-
-        <section id="home" class="hero">
-            <div class="hero-text">
-                <p class="hero-eyebrow">✦ Koleksi Terbaru 2025</p>
-                <h2>Belanja <em>Mudah</em>,<br>Harga <em>Bersaing</em></h2>
-                <p class="hero-sub">Produk terbaik dengan kualitas terjamin dan pengiriman cepat ke seluruh Indonesia.</p>
-                <a href="#products" class="hero-cta">Lihat Produk →</a>
-            </div>
-            <div class="hero-badges">
-                <div class="hbadge"><span class="hbadge-icon">⚡</span><span>Flash Sale</span></div>
-                <div class="hbadge"><span class="hbadge-icon">🚚</span><span>Gratis Ongkir</span></div>
-                <div class="hbadge"><span class="hbadge-icon">🎁</span><span>Kupon Member</span></div>
-            </div>
+        <section id="home">
+            <h2>Selamat Datang di Toko Online Kami</h2>
+            <p>Temukan produk terbaik dengan harga terjangkau.</p>
         </section>
-
         <section id="products">
-            <div class="section-head">
-                <h2>Produk Kami</h2>
-                <span class="section-line"></span>
-            </div>
+            <h2>Produk Kami</h2>
             <div class="products">
-
-                <div class="product" data-price="50000" data-discount="20" data-name="Produk 1">
-                    <div class="product-badge badge-sale">20% OFF</div>
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+1" alt="Produk 1">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 1</h3>
-                        <div class="product-price"><span class="price-old">Rp 50.000</span><span class="price-new">Rp 40.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 1">
+                    <h3>Produk 1</h3>
+                    <p>Harga: Rp 50.000</p>
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
-                <div class="product" data-price="75000" data-name="Produk 2">
-                    <div class="product-badge badge-new">NEW</div>
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+2" alt="Produk 2">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 2</h3>
-                        <div class="product-price"><span class="price-new">Rp 75.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 2">
+                    <h3>Produk 2</h3>
+                    <p>Harga: Rp 75.000</p>
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
-                <div class="product" data-price="100000" data-discount="10" data-name="Produk 3">
-                    <div class="product-badge badge-sale">10% OFF</div>
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+3" alt="Produk 3">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 3</h3>
-                        <div class="product-price"><span class="price-old">Rp 100.000</span><span class="price-new">Rp 90.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 3">
+                    <h3>Produk 3</h3>
+                    <p>Harga: Rp 100.000</p>
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
-                <div class="product" data-price="120000" data-name="Produk 4">
-                    <div class="product-badge badge-hot">TERLARIS</div>
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+4" alt="Produk 4">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 4</h3>
-                        <div class="product-price"><span class="price-new">Rp 120.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 4">
+                    <h3>Produk 4</h3>
+                    <p>Harga: Rp 120.000</p>
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
-                <div class="product" data-price="90000" data-discount="30" data-name="Produk 5">
-                    <div class="product-badge badge-sale">30% OFF</div>
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+5" alt="Produk 5">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 5</h3>
-                        <div class="product-price"><span class="price-old">Rp 90.000</span><span class="price-new">Rp 63.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 5">
+                    <h3>Produk 5</h3>
+                    <p>Harga: Rp 90.000</p>
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
-                <div class="product" data-price="60000" data-name="Produk 6">
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+6" alt="Produk 6">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 6</h3>
-                        <div class="product-price"><span class="price-new">Rp 60.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 6">
+                    <h3>Produk 6</h3>
+                    <p>Harga: Rp 60.000</p>
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
-                <div class="product" data-price="80000" data-discount="15" data-name="Produk 7">
-                    <div class="product-badge badge-sale">15% OFF</div>
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+7" alt="Produk 7">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 7</h3>
-                        <div class="product-price"><span class="price-old">Rp 80.000</span><span class="price-new">Rp 68.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 7">
+                    <h3>Produk 7</h3>
+                    <p>Harga: Rp 80.000</p>
+                    
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="promo-btn">Promo</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
-                <div class="product" data-price="110000" data-name="Produk 8">
-                    <div class="product-badge badge-new">NEW</div>
-                    <div class="product-img-wrap">
-                        <img src="https://via.placeholder.com/300x220/0f1c36/4fd1c5?text=Produk+8" alt="Produk 8">
-                        <div class="product-overlay">
-                            <button class="overlay-btn detail-btn">🔍 Detail</button>
-                            <button class="overlay-btn promo-btn">🏷 Promo</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Produk 8</h3>
-                        <div class="product-price"><span class="price-new">Rp 110.000</span></div>
-                        <button class="cart-btn">+ Keranjang</button>
+                <div class="product">
+                    <img src="https://via.placeholder.com/200" alt="Produk 8">
+                    <h3>Produk 8</h3>
+                    <p>Harga: Rp 110.000</p>
+                    <div class="button-group">
+                        <button class="detail-btn">Detail</button>
+                        <button class="promo-btn">Promo</button>
+                        <button class="cart-btn">Tambah ke Keranjang</button>
                     </div>
                 </div>
-
             </div>
         </section>
-
         <section id="add-product">
-            <div class="section-head">
-                <h2>Tambah Produk</h2>
-                <span class="section-line"></span>
-            </div>
+            <h2>Tambah Produk Baru</h2>
             <form id="add-product-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="product-name">Nama Produk</label>
-                        <input type="text" id="product-name" placeholder="Nama produk..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="product-price">Harga (Rp)</label>
-                        <input type="number" id="product-price" placeholder="Contoh: 50000" required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="product-discount">Diskon (%)</label>
-                        <input type="number" id="product-discount" placeholder="Kosongkan jika tidak ada" min="0" max="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="product-badge-select">Badge</label>
-                        <select id="product-badge-select">
-                            <option value="">Tidak ada</option>
-                            <option value="new">NEW</option>
-                            <option value="hot">TERLARIS</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group full">
-                    <label for="product-image">URL Gambar</label>
-                    <input type="url" id="product-image" placeholder="https://..." required>
-                </div>
-                <button type="submit" class="submit-btn">+ Tambah Produk</button>
+                <label for="product-name">Nama Produk:</label>
+                <input type="text" id="product-name" required>
+                <label for="product-price">Harga (Rp):</label>
+                <input type="number" id="product-price" required>
+                <label for="product-image">URL Gambar:</label>
+                <input type="url" id="product-image" required>
+                <button type="submit">Tambah Produk</button>
             </form>
         </section>
-
         <section id="about">
-            <div class="section-head">
-                <h2>Tentang Kami</h2>
-                <span class="section-line"></span>
-            </div>
+            <h2>Tentang Kami</h2>
             <div class="about-grid">
                 <div class="about-card">
-                    <div class="about-icon">🎯</div>
                     <h3>Misi Kami</h3>
-                    <p>Menghadirkan pengalaman belanja online yang cepat, aman, dan menyenangkan. Produk dipilih cermat untuk memastikan kualitas terbaik dengan harga kompetitif.</p>
+                    <p>Kami ingin menghadirkan pengalaman belanja online yang cepat, aman, dan menyenangkan bagi semua pelanggan. Produk dipilih dengan cermat untuk memastikan kualitas terbaik dengan harga yang kompetitif.</p>
                 </div>
                 <div class="about-card">
-                    <div class="about-icon">🌟</div>
                     <h3>Visi Kami</h3>
-                    <p>Menjadi toko online terpercaya — dikenal karena pelayanan ramah, proses checkout mudah, dan pengiriman tepat waktu ke seluruh Indonesia.</p>
+                    <p>Menjadi toko online terpercaya yang dikenal karena pelayanan ramah, proses checkout mudah, dan pengiriman tepat waktu ke seluruh Indonesia.</p>
                 </div>
                 <div class="about-card">
-                    <div class="about-icon">💎</div>
                     <h3>Nilai Kami</h3>
                     <ul>
                         <li>Kejujuran dalam setiap transaksi</li>
                         <li>Pelayanan pelanggan yang responsif</li>
                         <li>Kualitas produk yang konsisten</li>
-                        <li>Inovasi untuk pengalaman lebih baik</li>
+                        <li>Inovasi untuk pengalaman belanja lebih baik</li>
                     </ul>
                 </div>
             </div>
+            <p class="about-note">Kami selalu terbuka untuk masukan. Jika Anda memiliki pertanyaan atau ingin melihat produk baru di toko kami, silakan hubungi melalui form di bawah.</p>
         </section>
-
         <section id="contact">
-            <div class="section-head">
-                <h2>Kontak</h2>
-                <span class="section-line"></span>
-            </div>
+            <h2>Kontak</h2>
             <form id="contact-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Nama</label>
-                        <input type="text" id="name" placeholder="Nama lengkap..." required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="email@contoh.com" required>
-                    </div>
-                </div>
-                <div class="form-group full">
-                    <label for="message">Pesan</label>
-                    <textarea id="message" placeholder="Tulis pesan Anda..." required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Kirim Pesan →</button>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Pesan:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit">Kirim</button>
             </form>
         </section>
-
     </div>
-
     <footer>
-        <div class="footer-inner">
-            <div class="brand-dot small"></div>
-            <p>&copy; 2025 TokoOnline. Semua hak dilindungi.</p>
-        </div>
+        <p>&copy; 2023 Toko Online Sederhana. Semua hak dilindungi.</p>
     </footer>
-
-    <!-- Cart Modal -->
     <div id="cart-modal" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2>🛒 Keranjang</h2>
-                <button class="modal-close" onclick="closeCart()">✕</button>
-            </div>
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Keranjang Belanja</h2>
             <div id="cart-items"></div>
-            <div id="cart-summary"></div>
-            <button class="checkout-btn" onclick="checkout()">Checkout Sekarang →</button>
+            <button onclick="checkout()">Checkout</button>
         </div>
     </div>
-
-    <!-- Detail / Promo Modal -->
-    <div id="detail-modal" class="modal">
-        <div class="modal-content modal-sm">
-            <div class="modal-header">
-                <h2 id="detail-title">Detail Produk</h2>
-                <button class="modal-close" onclick="document.getElementById('detail-modal').style.display='none'">✕</button>
-            </div>
-            <div id="detail-body"></div>
-        </div>
-    </div>
-
-    <div id="toast"></div>
     <script src="script.js"></script>
 </body>
 </html>
