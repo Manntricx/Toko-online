@@ -2,18 +2,20 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 updateCartCount();
 
-document.querySelectorAll('.product button').forEach((button, index) => {
-    button.addEventListener('click', () => {
+// Event delegation untuk tombol keranjang
+document.querySelector('.products').addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+        const productDiv = e.target.closest('.product');
         const product = {
-            name: document.querySelectorAll('.product h3')[index].textContent,
-            price: document.querySelectorAll('.product p')[index].textContent,
-            img: document.querySelectorAll('.product img')[index].src
+            name: productDiv.querySelector('h3').textContent,
+            price: productDiv.querySelector('p').textContent,
+            img: productDiv.querySelector('img').src
         };
         cart.push(product);
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartCount();
         alert('Produk ditambahkan ke keranjang!');
-    });
+    }
 });
 
 function updateCartCount() {
@@ -110,30 +112,8 @@ document.getElementById('add-product-form').addEventListener('submit', function(
     // Reset form
     document.getElementById('add-product-form').reset();
 
-    // Re-attach event listener untuk tombol baru
-    attachCartListeners();
-
     alert('Produk berhasil ditambahkan!');
 });
-
-function attachCartListeners() {
-    document.querySelectorAll('.product button').forEach((button, index) => {
-        button.addEventListener('click', () => {
-            const product = {
-                name: document.querySelectorAll('.product h3')[index].textContent,
-                price: document.querySelectorAll('.product p')[index].textContent,
-                img: document.querySelectorAll('.product img')[index].src
-            };
-            cart.push(product);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartCount();
-            alert('Produk ditambahkan ke keranjang!');
-        });
-    });
-}
-
-// Panggil sekali untuk produk awal
-attachCartListeners();
 
 // Validasi form kontak
 document.getElementById('contact-form').addEventListener('submit', function(event) {
