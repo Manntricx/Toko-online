@@ -265,16 +265,6 @@ section p {
     background:rgba(79,209,197,0.15);
 }
 
-.product .promo-btn{
-    background:transparent;
-    border:1px solid var(--accent-dark);
-    color:var(--accent-dark);
-}
-
-.product .promo-btn:hover{
-    background:rgba(44,122,123,0.15);
-}
-
 .product .cart-btn{
     background:linear-gradient(135deg,var(--accent),var(--accent-dark));
     color:#0b1220;
