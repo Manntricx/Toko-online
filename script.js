@@ -100,7 +100,7 @@ document.getElementById('add-product-form').addEventListener('submit', function(
     const productDiv = document.createElement('div');
     productDiv.className = 'product';
     productDiv.innerHTML = `
-        <img src="${image}" alt="${name}">
+        <img src="https://picsum.photos/200" alt="${name}">
         <h3>${name}</h3>
         <p>Harga: Rp ${parseInt(price).toLocaleString()}</p>
         <button>Tambah ke Keranjang</button>
