@@ -159,6 +159,49 @@ section p {
     max-width: 720px;
 }
 
+/* About section */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.about-card {
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.about-card p {
+    margin: 0;
+    color: rgba(245, 247, 255, 0.8);
+}
+
+.about-card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    color: rgba(245, 247, 255, 0.8);
+}
+
+.about-card li {
+    margin-bottom: 0.5rem;
+}
+
+.about-note {
+    margin-top: 1.5rem;
+    color: rgba(245, 247, 255, 0.72);
+    font-style: italic;
+}
+
 /* Product cards */
 .products {
     display: grid;
