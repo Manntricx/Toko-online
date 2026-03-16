@@ -75,8 +75,15 @@
         </section>
         <section id="contact">
             <h2>Kontak</h2>
-            <p>Email: info@tokoonline.com</p>
-            <p>Telepon: 0812-3456-7890</p>
+            <form id="contact-form">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Pesan:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
         </section>
     </div>
     <footer>

@@ -132,3 +132,35 @@ footer {
 .close:hover {
     color: black;
 }
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+#contact-form label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+#contact-form input, #contact-form textarea {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+#contact-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+#contact-form button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#contact-form button:hover {
+    background-color: #218838;
+}
