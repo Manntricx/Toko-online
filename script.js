@@ -1,22 +1,43 @@
 // Keranjang belanja sederhana menggunakan localStorage
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 updateCartCount();
+attachCartListeners();
+attachDetailListeners();
 
 // Event delegation untuk tombol keranjang
-document.querySelector('.products').addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-        const productDiv = e.target.closest('.product');
-        const product = {
-            name: productDiv.querySelector('h3').textContent,
-            price: productDiv.querySelector('p').textContent,
-            img: productDiv.querySelector('img').src
-        };
-        cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
-        alert('Produk ditambahkan ke keranjang!');
-    }
-});
+function attachCartListeners() {
+    document.querySelector('.products').addEventListener('click', (e) => {
+        if (e.target.classList.contains('cart-btn')) {
+            const productDiv = e.target.closest('.product');
+            const product = {
+                name: productDiv.querySelector('h3').textContent,
+                price: productDiv.querySelector('p').textContent,
+                img: productDiv.querySelector('img').src
+            };
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert('Produk ditambahkan ke keranjang!');
+        }
+    });
+}
+
+// Detail Produk
+function attachDetailListeners() {
+    document.querySelector('.products').addEventListener('click', (e) => {
+        if (e.target.classList.contains('detail-btn')) {
+            const productDiv = e.target.closest('.product');
+            const name = productDiv.querySelector('h3').textContent;
+            const price = productDiv.querySelector('p').textContent;
+            const img = productDiv.querySelector('img').src;
+
+            alert(`Detail Produk:
+Nama: ${name}
+Harga: ${price}
+Gambar: ${img}`);
+        }
+    });
+}
 
 function updateCartCount() {
     document.getElementById('cart-count').textContent = cart.length;
@@ -96,21 +117,21 @@ document.getElementById('add-product-form').addEventListener('submit', function(
         return;
     }
 
-    // Buat elemen produk baru
     const productDiv = document.createElement('div');
     productDiv.className = 'product';
     productDiv.innerHTML = `
         <img src="https://picsum.photos/200" alt="${name}">
         <h3>${name}</h3>
         <p>Harga: Rp ${parseInt(price).toLocaleString()}</p>
-        <button>Tambah ke Keranjang</button>
+        <div class="button-group">
+            <button class="detail-btn">Detail</button>
+            <button class="cart-btn">Tambah ke Keranjang</button>
+        </div>
     `;
 
-    // Tambahkan ke daftar produk
     document.querySelector('.products').appendChild(productDiv);
 
-    // Reset form
-    document.getElementById('add-product-form').reset();
+    this.reset();
 
     alert('Produk berhasil ditambahkan!');
 });

@@ -343,6 +343,33 @@ section p {
     transform: translateY(-2px);
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
 }
+.button-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.detail-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.detail-btn:hover {
+    background-color: #5a6268;
+}
+.cart-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.cart-btn:hover {
+    background-color: #218838;
+}
 
 /* Contact form */
 #contact-form {
