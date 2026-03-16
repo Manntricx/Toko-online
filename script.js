@@ -58,6 +58,16 @@ function checkout() {
     closeCart();
 }
 
+// detail produk
+document.querySelectorAll('.product button:nth-child(3)').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        const name = document.querySelectorAll('.product h3')[index].textContent;
+        const price = document.querySelectorAll('.product p')[index].textContent;
+        const img = document.querySelectorAll('.product img')[index].src;
+        alert(`Detail Produk:\nNama: ${name}\nHarga: ${price}\nGambar: ${img}`);
+    });
+});
+
 // Tutup modal jika klik di luar
 window.onclick = function(event) {
     const modal = document.getElementById('cart-modal');
