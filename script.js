@@ -82,6 +82,59 @@ function filterProducts() {
     });
 }
 
+// Tambah produk baru
+document.getElementById('add-product-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('product-name').value.trim();
+    const price = document.getElementById('product-price').value.trim();
+    const image = document.getElementById('product-image').value.trim();
+
+    if (!name || !price || !image) {
+        alert('Semua field harus diisi.');
+        return;
+    }
+
+    // Buat elemen produk baru
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product';
+    productDiv.innerHTML = `
+        <img src="${image}" alt="${name}">
+        <h3>${name}</h3>
+        <p>Harga: Rp ${parseInt(price).toLocaleString()}</p>
+        <button>Tambah ke Keranjang</button>
+    `;
+
+    // Tambahkan ke daftar produk
+    document.querySelector('.products').appendChild(productDiv);
+
+    // Reset form
+    document.getElementById('add-product-form').reset();
+
+    // Re-attach event listener untuk tombol baru
+    attachCartListeners();
+
+    alert('Produk berhasil ditambahkan!');
+});
+
+function attachCartListeners() {
+    document.querySelectorAll('.product button').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const product = {
+                name: document.querySelectorAll('.product h3')[index].textContent,
+                price: document.querySelectorAll('.product p')[index].textContent,
+                img: document.querySelectorAll('.product img')[index].src
+            };
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert('Produk ditambahkan ke keranjang!');
+        });
+    });
+}
+
+// Panggil sekali untuk produk awal
+attachCartListeners();
+
 // Validasi form kontak
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
