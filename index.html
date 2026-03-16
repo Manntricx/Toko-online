@@ -9,6 +9,7 @@
 <body>
     <header>
         <h1>Toko Online Sederhana</h1>
+        <input type="text" id="search" placeholder="Cari produk...">
         <div id="cart" onclick="showCart()">
             <span id="cart-icon">🛒</span>
             <span id="cart-count">0</span>
@@ -82,12 +83,38 @@
         </section>
         <section id="about">
             <h2>Tentang Kami</h2>
-            <p>Kami adalah toko online yang menyediakan berbagai produk berkualitas.</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Misi Kami</h3>
+                    <p>Kami ingin menghadirkan pengalaman belanja online yang cepat, aman, dan menyenangkan bagi semua pelanggan. Produk dipilih dengan cermat untuk memastikan kualitas terbaik dengan harga yang kompetitif.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Visi Kami</h3>
+                    <p>Menjadi toko online terpercaya yang dikenal karena pelayanan ramah, proses checkout mudah, dan pengiriman tepat waktu ke seluruh Indonesia.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Nilai Kami</h3>
+                    <ul>
+                        <li>Kejujuran dalam setiap transaksi</li>
+                        <li>Pelayanan pelanggan yang responsif</li>
+                        <li>Kualitas produk yang konsisten</li>
+                        <li>Inovasi untuk pengalaman belanja lebih baik</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="about-note">Kami selalu terbuka untuk masukan. Jika Anda memiliki pertanyaan atau ingin melihat produk baru di toko kami, silakan hubungi melalui form di bawah.</p>
         </section>
         <section id="contact">
             <h2>Kontak</h2>
-            <p>Email: info@tokoonline.com</p>
-            <p>Telepon: 0812-3456-7890</p>
+            <form id="contact-form">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="message">Pesan:</label>
+                <textarea id="message" required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
         </section>
     </div>
     <footer>

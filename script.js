@@ -65,3 +65,49 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
+
+// Fitur pencarian produk
+document.getElementById('search').addEventListener('input', filterProducts);
+
+function filterProducts() {
+    const query = document.getElementById('search').value.toLowerCase();
+    const products = document.querySelectorAll('.product');
+    products.forEach(product => {
+        const name = product.querySelector('h3').textContent.toLowerCase();
+        if (name.includes(query)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
+
+// Validasi form kontak
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name) {
+        alert('Nama harus diisi.');
+        return;
+    }
+    if (!email || !isValidEmail(email)) {
+        alert('Email harus diisi dan valid.');
+        return;
+    }
+    if (!message) {
+        alert('Pesan harus diisi.');
+        return;
+    }
+
+    // Simulasi pengiriman (dalam proyek nyata, kirim ke server)
+    alert('Pesan berhasil dikirim! Terima kasih.');
+    document.getElementById('contact-form').reset();
+});
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
